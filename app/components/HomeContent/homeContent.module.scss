@@ -243,7 +243,15 @@
     }
 
     @media (max-height: 745px) {
-      height: 44vh;
+      height: 45vh;
+    }
+
+    @media (max-height: 700px) {
+      height: 43vh;
+    }
+
+    @media (max-height: 670px) {
+      height: 40vh;
     }
 
     &::-webkit-scrollbar {
@@ -254,6 +262,7 @@
     &::-webkit-scrollbar-track {
       background: none;
       height: 110px;
+      margin-top: 50px;
     }
 
     &::-webkit-scrollbar-thumb {

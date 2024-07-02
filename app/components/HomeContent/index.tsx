@@ -229,10 +229,6 @@ function HomeContent() {
                 onClick={() => setShowIconMenu(!showIconMenu)}
                 className={styles.ellipsisIcon}
               />
-              {/* <Image src={cameraIcon} alt="icon" />
-              <Image src={playIcon} alt="icon" />
-              <Image src={fileIcon} alt="icon" />
-              <Image src={gunIcon} alt="icon" /> */}
             </div>
             <div
               ref={showMenuRef}

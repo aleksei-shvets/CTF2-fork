@@ -27,9 +27,9 @@ interface PropsTypes {
 }
 
 const PostCard: React.FC<PropsTypes> = ({ post }) => {
-  const randomFakeLikes = Math.floor(Math.random() * 201);
-  const randomFakeCommentsCount = Math.floor(Math.random() * 20);
-  const randomFakeShares = Math.floor(Math.random() * 12);
+  const randomFakeLikes = React.useMemo(() => Math.floor(Math.random() * 201), []);
+  const randomFakeCommentsCount = React.useMemo(() => Math.floor(Math.random() * 20), []);
+  const randomFakeShares = React.useMemo(() => Math.floor(Math.random() * 12), []);
 
   return (
     <div className={styles.postCard}>
