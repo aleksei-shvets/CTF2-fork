@@ -3,6 +3,7 @@
   margin-bottom: 20px;
   width: 100%;
   justify-content: space-between;
+  height: 165px;
 }
 
 .navBox {
@@ -10,34 +11,64 @@
   flex-direction: column;
   justify-content: end;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .marketNav {
-  
+  padding: 0 50px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
 }
 
 @keyframes hoverBtn {
 
   100% {
-    background: linear-gradient(90deg, rgba(24, 134, 208, 1) 0%, rgba(12, 68, 106, 1) 100%);
+    color: #1886D0;
   }
 }
 
 .linkBorder {
   padding: 20px;
   width: auto;
-
   padding: 1px;
-  background: #474C52;
-  border-radius: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  .navItem {
-    color: #D9D9D9;
+  &__active {
+    background: linear-gradient(90deg, rgba(24, 134, 208, 1) 0%, rgba(12, 68, 106, 1) 100%);
+    border-radius: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    width: auto;
+  }
+}
+
+.navItem {
+  color: #D9D9D9;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 19px;
+  width: auto;
+  height: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 10px;
+
+  &:hover {
+    animation: hoverBtn 200ms ease-in forwards;
+
+    // background: linear-gradient(90deg, rgba(24, 134, 208, 1) 0%, rgba(12, 68, 106, 1) 100%);
+  }
+
+  &__active {
+    box-shadow: 0 5px 20px 0 rgba(37, 36, 36, 0.6);
+    border-radius: 0 10px;
+    color: #1886D0;
     font-weight: 600;
     font-size: 24px;
     text-transform: uppercase;
@@ -49,22 +80,6 @@
     align-items: center;
     background: #1C1C1C;
     border-radius: 0 10px;
-    &:active {
-      background: #0F629A;
-    }
-    &__active {
-      box-shadow: 0 5px 20px 0 rgba(37, 36, 36, 0.6);
-      border-radius: 0 10px;
-      color: #1886D0;
-    }
-  }
-  &:hover {
-    animation: hoverBtn 200ms ease-in forwards;
-
-    // background: linear-gradient(90deg, rgba(24, 134, 208, 1) 0%, rgba(12, 68, 106, 1) 100%);
-  }
-  &__active {
-    background: linear-gradient(90deg, rgba(24, 134, 208, 1) 0%, rgba(12, 68, 106, 1) 100%);
   }
 }
 
