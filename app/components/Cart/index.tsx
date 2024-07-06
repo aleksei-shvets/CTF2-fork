@@ -20,62 +20,49 @@ const Cart: FC = () => {
   const handleIsOpenCart = () => setIsOpenCart(!isOpenCart);
 
   return (
-    <div className={clsx(styles.cartBox, !isOpenCart && styles.cartBox_closed)}>
-      
-      <div className={clsx(styles.balanceBox, isOpenCart && styles.balanceBox_openCartBorder)}>
-        <button
-          type="button"
-          className={styles.balanceBtn}
-          onClick={() => handleIsOpenCart()}
-        >
-          <div className={styles.title}>
-            <p>Balance</p>
-            <div className={styles.balanceCount}>
-              <span>14.256</span>
-              <Image src={iconPrice} alt="iconPrice" width={20} height={20} />
+    <div className={clsx(styles.cartBox, isOpenCart ? styles.cartBox_open : styles.cartBox_closed)}>
+      <div>
+        <div className={clsx(styles.balanceBox, isOpenCart && styles.balanceBox_openCartBorder)}>
+          <button
+            type="button"
+            className={styles.balanceBtn}
+            onClick={() => handleIsOpenCart()}
+          >
+            <div className={styles.title}>
+              <p>Balance</p>
+              <div className={styles.balanceCount}>
+                <span>14.256</span>
+                <Image src={iconPrice} alt="iconPrice" width={20} height={20} />
+              </div>
             </div>
-          </div>
-          
-          <div className={styles.iconBox}>
-            {isOpenCart
-              ? (
-                <div className={styles.currencyIcon}>
-                  <IconCurrency />
-                </div>
-                )
-              : <IconCartWithBadge
-                iconClass={styles.cartColor_closedCart}
-                backgroundClass={styles.closedCartBg}
-                productCount={productCount}
-              />
-            }
-          </div>
-        </button>
-      </div>
 
-      <div className={clsx(styles.cart)}>
-        {isOpenCart && (
-          <>
-            <div className={styles.cartButtons}>
-              <div className={styles.btnBorder}>
-                <button className={styles.cartBtn} type="button">
-                  Сonclusion
-                </button>
-              </div>
-              <div className={styles.btnBorder}>
-                <button className={styles.cartBtn} type="button">
-                  Replenish
-                </button>
+            <div className={styles.iconBox}>
+              <div className={clsx(styles.currencyIcon, isOpenCart ? styles.currencyIcon_visible : styles.currencyIcon_hidden)}>
+                <IconCurrency />
               </div>
             </div>
-            <IconCartWithBadge
-              iconClass={styles.cartColor}
-              backgroundClass={styles.openCartBg}
-              productCount={productCount}
-            />
-          </>
-        )}
+          </button>
+        </div>
+        <div className={clsx(styles.cart)}>
+          <div className={styles.cartButtons}>
+            <div className={styles.btnBorder}>
+              <button className={styles.cartBtn} type="button">
+                Сonclusion
+              </button>
+            </div>
+            <div className={styles.btnBorder}>
+              <button className={styles.cartBtn} type="button">
+                Replenish
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+      <IconCartWithBadge
+        iconClass={clsx(styles.cartColor, !isOpenCart && styles.cartColor_closedCart)}
+        backgroundClass={styles.openCartBg}
+        productCount={productCount}
+      />
     </div>
   );
 };

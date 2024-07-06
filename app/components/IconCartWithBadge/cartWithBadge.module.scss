@@ -1,12 +1,14 @@
 .cartIcon {
-  position: relative;
+  position: absolute;
   border-radius: 10px;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  z-index: 2;
+  right: 10px;
+  bottom: 10px;
 }
 
 .cartColor {
